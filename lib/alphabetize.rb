@@ -1,23 +1,24 @@
 ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 
 def alphabetize(arr)
-  sorted = false 
+  sorted = false
   until sorted
-    i = 0 
-    while i < arr.length - 1 
+    i = 0
+    while i < arr.length - 1
       sorted = true
       first = arr[i]
       second = arr[i+1]
-      j = 0 
-      while j < [first.length,second.length].min 
+      j = 0
+      while j < [first.length,second.length].min
         if ESPERANTO_ALPHABET.index(first[j]) > ESPERANTO_ALPHABET.index(second[j])
           arr[i] , arr[i+1] = arr[i+1] , arr[i]
-          sorted = false 
+          sorted = false
         elsif ESPERANTO_ALPHABET.index(first[j]) < ESPERANTO_ALPHABET.index(second[j])
-          break 
-        end 
-        j += 1 
-      end 
+          sorted = true
+          break
+        end
+        j += 1
+      end
       i += 1
     end
   end
