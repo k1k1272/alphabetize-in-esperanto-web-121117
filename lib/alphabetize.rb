@@ -14,7 +14,6 @@ def alphabetize(arr)
           arr[i] , arr[i+1] = arr[i+1] , arr[i]
           sorted = false
         elsif ESPERANTO_ALPHABET.index(first[j]) < ESPERANTO_ALPHABET.index(second[j])
-          sorted = true
           break
         end
         j += 1
