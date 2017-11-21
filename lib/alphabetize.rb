@@ -10,7 +10,6 @@ def alphabetize(arr)
       second = arr[i+1]
       j = 0
       while j < [first.length,second.length].min
-        sorted = true
         if ESPERANTO_ALPHABET.index(first[j]) > ESPERANTO_ALPHABET.index(second[j])
           arr[i] , arr[i+1] = arr[i+1] , arr[i]
           sorted = false
