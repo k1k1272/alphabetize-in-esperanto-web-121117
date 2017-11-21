@@ -1,5 +1,25 @@
 ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 
 def alphabetize(arr)
-  arr.sort_by { |a| ESPERANTO_ALPHABET.index(a[0]) }
+  sorted = false 
+  until sorted
+    i = 0 
+    while i < arr.length - 1 
+      sorted = true
+      first = arr[i]
+      second = arr[i+1]
+      j = 0 
+      while j < [first.length,second.length].min 
+        if ESPERANTO_ALPHABET.index(first[j]) > ESPERANTO_ALPHABET.index(second[j])
+          arr[i] , arr[i+1] = arr[i+1] , arr[i]
+          sorted = false 
+        elsif ESPERANTO_ALPHABET.index(first[j]) < ESPERANTO_ALPHABET.index(second[j])
+          break 
+        end 
+        j += 1 
+      end 
+      i += 1
+    end
+  end
+  arr
 end
